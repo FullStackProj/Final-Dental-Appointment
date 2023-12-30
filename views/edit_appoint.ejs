@@ -1,0 +1,67 @@
+<%- include('layout/header') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mx-auto mt-4">
+            <div class="card shadow">
+                <div class="card-header bg-success">
+                    <h3 class="text-light">Edit appoinment (<%= user.name %>)</h3>
+                </div>
+                <div class="card-body p-4">
+                    <form action="/updateAppoint/<%= user._id %>" method="post" id="add-form">
+                        <div class="md-3">
+                            <label for="name">Patient Name</label>
+                            <input type="text" name="name" class="form-control form-control-lg" placeholder="Enter Patient Name" value="<%= user.name %>" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="age">Patient Age</label>
+                            <input type="text" name="age" class="form-control form-control-lg" placeholder="" value="<%= user.age %>" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" name="phone" class="form-control form-control-lg" placeholder="Enter Your Phone Number" value="<%= user.phone %>" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phone">Time</label>
+                            <input type="datetime-local" id="time" name="time" value="<%= user.time.toISOString().slice(0, 16) %>" required>
+                        </div>
+                        
+                        
+        
+                            <div class="mb-3">
+                                <label for="service">Service</label>
+                                <select name="service" id="service" required>
+                                    <option value="service1" <%= user.service === 'service1' ? 'selected' : '' %>>Tooth extraction</option>
+                                    <option value="service2" <%= user.service === 'service2' ? 'selected' : '' %>>Dental Cleanings and Check-ups</option>
+                                    <option value="service3" <%= user.service === 'service3' ? 'selected' : '' %>>Dental Fillings</option>
+                                    <option value="service4" <%= user.service === 'service4' ? 'selected' : '' %>>Teeth Whitening</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="doctor">Select Doctor</label>
+                                <select name="doctor" id="doctor" required>
+                                    <option value="doctor1" <%= user.doctor === 'doctor1' ? 'selected' : '' %>>Dr. Prachi Deval</option>
+                                    <option value="doctor2" <%= user.doctor === 'doctor2' ? 'selected' : '' %>>Dr. Rohan Nashikkar</option>
+                                    <option value="doctor3" <%= user.doctor === 'doctor3' ? 'selected' : '' %>>Dr. Pinal Jain</option>
+                                    <option value="doctor4" <%= user.doctor === 'doctor4' ? 'selected' : '' %>>Dr. Rahul Kumar</option>
+                                </select>
+                            </div>
+                            
+                            
+                        
+                        <input type="hidden" name="old_image" value="<%= user.image %>"/>
+                        
+                        <div class="mb-3 d-grid">
+                            <input type="submit" name="submit" value="Update User" class="btn btn-success btn-lg" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('layout/footer') %>
