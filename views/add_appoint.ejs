@@ -1,0 +1,60 @@
+<%- include('layout/header') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mx-auto mt-4">
+            <div class="card shadow">
+                <div class="card-header bg-primary">
+                    <h3 class="text-light">Create Appointment</h3>
+                </div>
+                <div class="card-body p-4">
+                    <form action="/add" method="post" id="add-form">
+                        <div class="md-3">
+                            <label for="name">Patient Name</label>
+                            <input type="text" name="name" class="form-control form-control-lg" placeholder="Enter Patient Name" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="age">Age</label>
+                            <input type="text" name="age" class="form-control form-control-lg" placeholder="Enter Your age" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phone">Phone</label>
+                            <input type="tel" name="phone" class="form-control form-control-lg" placeholder="Enter Your Phone Number" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone">Time</label><br>
+                            <input type="datetime-local" id="time" name="time">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phone" name = "service">Select Service</label  class="form-control form-control-lg">
+                            <select name="service" id="service" >
+                                <option value="service1">Tooth extraction</option>
+                                <option value="service2">Dental Cleanings and Check-ups</option>
+                                <option value="service3">Dental Fillings</option>
+                                <option value="service4">Teeth Whitening</option>
+                              </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phone">Select Doctor</label  class="form-control form-control-lg">
+                            <select name="doctor" id="" >
+                                <option value="doctor1">Dr. Prachi Deval</option>
+                                <option value="doctor2">Dr. Rohan Nashikkar</option>
+                                <option value="doctor3">Dr. Pinal Jain</option>
+                                <option value="doctor4">Dr. Rahul Kumar</option>
+                              </select>
+                        </div>
+                        <div class="mb-3 d-grid">
+                            <input type="submit" name="submit" value="add appointment" class="btn btn-primary btn-lg" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('layout/footer') %>

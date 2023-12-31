@@ -59,6 +59,8 @@ main.use("", require("./routes/staffloginRoute"));
 
 main.use(express.static('views')); 
 
+main.use(express.static('uploads'));
+
 main.get('/add_users', (req, res) => {
     res.render('add_users');        
 });
