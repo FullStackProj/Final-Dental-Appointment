@@ -9,6 +9,13 @@ const bodyParser = require('body-parser');
 const Router = require('./routes/appointRoute');
 const port = 3000;
 
+//socket
+const http = require('http');
+const WebSocket = require('ws');
+const ejs = require('ejs');
+const server = http.createServer(main);
+const wss = new WebSocket.Server({ server });
+
 // Database connection
 mongoose.connect(process.env.DB_URI);
 const db = mongoose.connection;
@@ -51,11 +58,42 @@ main.use("", require("./routes/staffRoute"));
 main.use("", require("./routes/docRoute"));
 main.use("", require("./routes/patientRoute"));
 main.use("", require("./routes/adminRoute"));
-//main.use("", require("./routes/Router"));
 main.use("", require("./routes/loginRoute"));
 main.use("", require("./routes/staffloginRoute"));
 
-// Add this to your existing session middleware configuration
+//socket
+main.use(express.static('public'));
+main.set('view engine', 'ejs');
+
+main.get('/admin', (req, res) => {
+  res.render('admin');
+});
+
+main.get('/user', (req, res) => {
+  res.render('user');
+});
+
+
+wss.on('connection', (ws) => {
+  ws.on('message', (message) => {
+    
+    const stringMessage = message.toString();
+
+    
+    wss.clients.forEach((client) => {
+      if (client.readyState === WebSocket.OPEN) {
+        client.send(stringMessage); 
+      }
+    });
+  });
+});
+
+const PORT = process.env.PORT || 5000;
+server.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
+
+
 
 main.use(express.static('views')); 
 
@@ -486,7 +524,35 @@ main.get('/', (req, res) => {
 ////////////////////////////////////////////
 
 
+////////////////////////////////////////////
 
+main.use(express.static('views')); 
+
+main.get('/http://localhost:5000/user', (req, res) => {
+    res.render('http://localhost:5000/user');        
+});
+
+main.get('/', (req, res) => {
+    res.render('index'); 
+});
+
+
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+
+main.use(express.static('views')); 
+
+main.get('/http://localhost:5000/admin', (req, res) => {
+    res.render('http://localhost:5000/admin');        
+});
+
+main.get('/', (req, res) => {
+    res.render('dashboard'); 
+});
+
+
+////////////////////////////////////////////
 
 // Start the server
 main.listen(port, () => {
