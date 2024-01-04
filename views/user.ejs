@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>User Chat</title>
   <style>
 
@@ -19,77 +19,64 @@
   font-size: 20px;
   text-align: right;
 }
+body {
+  font-family: Arial, sans-serif;
+  background-color: #a2d2ff;
+  padding: 20px;
+  color: #000000;
+  font-size: 20px;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #a2d2ff;
-      padding: 20px;
-      color: #000000;
-      font-size: 20px;
-    }
+h2 {
+  color: #003566;
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-    body p {
-    background-color: rgb(255, 255, 255);
-    padding: 10px;
-  }
-
-    h2 {
-      color: #003566;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-  
-  #chat-box {
+#chat-box {
   width: 80%;
   height: 400px;
   border: 1px solid #ddd;
   border-radius: 10px;
-  color:rgb(32, 91, 63);
+  color: rgb(32, 91, 63);
   background-color: rgb(255, 255, 255);
   padding: 5px;
   padding: 10px;
   margin: 0 auto 20px;
   overflow-y: scroll;
-  text-align: left; 
+  text-align: left;
+}
+
+#message-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#message-input {
+  flex-grow: 1;
+  padding: 12px 20px;
+  border: 5px solid #ddd;
+  margin-right: 10px;
+  width: 70%;
+  margin-left: 120px;
+  border-radius: 10px;
+
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  min-width: 100px;
+  background-color: #418a9c;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 
-    input{
-      min-height: 40px;
-      font-size: 20px;
-    }
 
-    #message-input {
-      flex-grow: 1; 
-      padding: 5px;
-      border: 5px solid #ddd;
-      margin-right: 10px; 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 80%;
-      margin: 0 auto;
-    }
-  
-    button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 10px;
-      min-width: 100px;
-      background-color: #418a9c;
-      color: white;
-      cursor: pointer;
-      white-space: nowrap;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 15px auto;
-    }
-  
-    button:hover {
-      background-color: #418a9c;
-      transform: scale(1.5);
-    }
   </style>
   
 </head>
@@ -99,7 +86,8 @@
 
   <input type="text" id="message-input" placeholder="Type your message">
   
-  <button onclick="sendMessage()">Send</button>
+  <button onclick="sendMessage()" style="font-size:24px"><i class="fa fa-send-o"></i></button>
+  
 
   <script>
   const socket = new WebSocket(`ws://${window.location.host}`);
