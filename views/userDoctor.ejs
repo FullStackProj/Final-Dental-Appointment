@@ -12,8 +12,12 @@
                                 <% Doctor.forEach((row, index) => { %>
 
                                     <div class="card">
+
+                                        <div><img src="<%= row.image %>" width="200" class="img-thumbnail" ></div>
                                         <h3><%= row.name %></h3>
-                                        <div><img src="<%= row.image %>" width="80" class="img-thumbnail" ></div>
+                                        <div><%= row.email %></div>
+                                        <div><%= row.phone %></div>
+
                                         <br>
                                         <div>                                    
                                             <button class="btn" onclick="navigateAppoint()">Book an Doctor</button>

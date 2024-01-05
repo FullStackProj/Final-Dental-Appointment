@@ -15,8 +15,11 @@
     <% service.forEach((row, index) => { %>
 
         <div class="card">
+
+           <div><img src="<%= row.image %>" width="250"  class="img-thumbnail" ></div>
             <h3><%= row.name %></h3>
-            <div><img src="<%= row.image %>" width="80" class="img-thumbnail" ></div>
+            <div><%= row.desc %></div>
+
             <br>
             <div>                                   
                 <button class="btn" onclick="navigateAppoint()">Book an Service</button>
