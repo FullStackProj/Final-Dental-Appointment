@@ -569,6 +569,66 @@ main.get('/', (req, res) => {
 
 ////////////////////////////////////////////
 
+////////////////////////////////////////////
+
+main.use(express.static('views')); 
+
+main.get('/userDoctor', (req, res) => {
+    res.render('userDoctor');        
+});
+
+main.get('/', (req, res) => {
+    res.render('index'); 
+});
+
+
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+
+main.use(express.static('views')); 
+
+main.get('/userDoctor', (req, res) => {
+    res.render('userDoctor');        
+});
+
+main.get('/', (req, res) => {
+    res.render('index'); 
+});
+
+
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+
+main.use(express.static('views')); 
+
+main.get('/userDoctor', (req, res) => {
+    res.render('userDoctor');        
+});
+
+main.get('/', (req, res) => {
+    res.render('index'); 
+});
+
+
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+
+main.use(express.static('views')); 
+
+main.get('/userBlog', (req, res) => {
+    res.render('userBlog');        
+});
+
+main.get('/', (req, res) => {
+    res.render('index'); 
+});
+
+
+////////////////////////////////////////////
+
 
 // Start the server
 main.listen(port, () => {

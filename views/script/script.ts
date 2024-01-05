@@ -1,13 +1,68 @@
 
+//Buttons to navigate to Doctors page
+
     document.addEventListener('DOMContentLoaded', function () {
-        // Get the anchor element by its ID
+        
         const myLink: HTMLAnchorElement | null = document.getElementById('myLink') as HTMLAnchorElement;
 
-        // Check if the element exists
         if (myLink) {
-            // Add a click event listener
+            
             myLink.addEventListener('click', function (event) {
-                event.preventDefault(); // Prevent the default behavior of the link (e.g., navigating to a new page)
+                event.preventDefault(); 
+                alert('Link clicked!');
+            });
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        
+        const myLink: HTMLAnchorElement | null = document.getElementById('myLink1') as HTMLAnchorElement;
+
+        if (myLink) {
+            
+            myLink.addEventListener('click', function (event) {
+                event.preventDefault(); 
+                alert('Link clicked!');
+            });
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        
+        const myLink: HTMLAnchorElement | null = document.getElementById('myLink2') as HTMLAnchorElement;
+
+        if (myLink) {
+            
+            myLink.addEventListener('click', function (event) {
+                event.preventDefault(); 
+                alert('Link clicked!');
+            });
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        
+        const myLink: HTMLAnchorElement | null = document.getElementById('myLink3') as HTMLAnchorElement;
+
+        if (myLink) {
+            
+            myLink.addEventListener('click', function (event) {
+                event.preventDefault(); 
+                alert('Link clicked!');
+            });
+        }
+    });
+
+    //Navigate to Blog Page
+
+    document.addEventListener('DOMContentLoaded', function () {
+        
+        const myLink: HTMLAnchorElement | null = document.getElementById('Link1') as HTMLAnchorElement;
+
+        if (myLink) {
+            
+            myLink.addEventListener('click', function (event) {
+                event.preventDefault(); 
                 alert('Link clicked!');
             });
         }
