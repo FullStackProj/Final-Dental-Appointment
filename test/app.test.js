@@ -29,3 +29,28 @@ jest.mock('../models/patient', () => {
   };
 });
 
+describe('Login Form', () => {
+  it('renders the login form', async () => {
+    const response = await request(app).get('/Userlogin');
+    expect(response.statusCode).toBe(200);
+    expect(response.text).toContain('User Login');
+  });
+
+  it('handles login with valid credentials', async () => {
+    const response = await testSession.post('/Userlogin')
+      .send({ name: 'validName', email: 'validEmail' });
+  
+    expect(response.statusCode).toBe(302);
+    expect(response.headers.location).toBe('/index');//should redirect to index.ejs not Userlogin
+  });
+  
+  it('handles login with invalid credentials', async () => {
+    const response = await request(app)
+      .post('/Userlogin')
+      .send({ name: 'invalidName', email: 'invalidEmail' });
+  
+    expect(response.statusCode).toBe(302);
+    expect(response.headers.location).toBe('/Userlogin');
+  });
+});
+
