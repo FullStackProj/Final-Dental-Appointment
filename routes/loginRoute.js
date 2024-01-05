@@ -2,7 +2,19 @@
 const Patient = require('../models/patient');
 const express = require('express');
 const router = express.Router();
+const session = require('express-session');
 
+router.use(session({
+    secret: 'your_secret_key',
+    resave: false,
+    saveUninitialized: true,
+  }));
+  
+  router.get('/Userlogin', (req, res) => {
+      // Ensure this route is correctly defined
+      res.status(200).send('User Login');
+    })
+  
 router.post('/Userlogin', async (req, res) => {
     const { name, email } = req.body;
 
