@@ -54,6 +54,20 @@
                 }
               }
             }
+
+            document.addEventListener('DOMContentLoaded', function () {
+    // Your initialization code goes here
+
+    // Floating icon click event
+    const chatIcon = document.getElementById('chat-icon');
+    chatIcon.addEventListener('click', function () {
+        // Open your chat interface or trigger chat-related functionality here
+        alert('Chat icon clicked!');
+    });
+
+                          
+});
+
             </script>
 
 <style>
@@ -95,6 +109,30 @@
     .show {
       display: block;
     }
+
+    
+
+.floating-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #007bff; /* Change the background color as needed */
+    color: #ffffff; /* Change the text color as needed */
+    border-radius: 50%;
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    /* Add any additional styles based on your design preferences */
+}
+
+.floating-icon:hover{
+    background-color: black ; /* Change the background color as needed */
+    
+}
+
     </style>
     
     </head>
@@ -107,7 +145,12 @@
             <div class="circle"></div>
         </div>
 
-
+        <div id="chat-icon" class="floating-icon" onclick="chat()">🗨️</div>
+        <script>
+            function chat() {
+                 window.location.href = '/user';
+                            }
+         </script>
 <!--- HEADER START-->
 
         <header class="header" data-header>
@@ -191,14 +234,15 @@
 
                         <li id="chat" class="navbar-item">
                            
-                            <button  onclick="chat()">ChatHUb</button>
-
+                            
+                            <div id="chat-icon" class="floating-icon" onclick="chat()">🗨️</div>
                        
                             <script>
                                 function chat() {
                                      window.location.href = '/user';
                                                 }
                              </script>
+
                     </li>
                     </ul>
                 </nav>
