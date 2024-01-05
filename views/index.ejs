@@ -36,13 +36,13 @@
         <link rel="preload" as="image" href="./images1/hero-banner.png" />
         <link rel="preload" as="image" href="./images1/hero-bg.png" />
 
-        <script>
+       <script>
             function toggleDropdown() {
               var dropdown = document.getElementById("myDropdown");
               dropdown.classList.toggle("show");
             }
             
-            // Close the dropdown if the user clicks outside of it
+
             window.onclick = function(event) {
               if (!event.target.matches('.dropbtn')) {
                 var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -56,20 +56,17 @@
             }
 
             document.addEventListener('DOMContentLoaded', function () {
-    // Your initialization code goes here
-
-    // Floating icon click event
+  
     const chatIcon = document.getElementById('chat-icon');
     chatIcon.addEventListener('click', function () {
-        // Open your chat interface or trigger chat-related functionality here
+        
         alert('Chat icon clicked!');
     });
 
                           
 });
 
-            </script>
-
+</script>
 <style>
 
     .dropdown {
@@ -118,18 +115,18 @@
     right: 20px;
     width: 50px;
     height: 50px;
-    background-color: #007bff; /* Change the background color as needed */
-    color: #ffffff; /* Change the text color as needed */
+    background-color: #007bff; 
+    color: #ffffff; 
     border-radius: 50%;
     font-size: 30px;
     text-align: center;
     line-height: 50px;
     cursor: pointer;
-    /* Add any additional styles based on your design preferences */
+    
 }
 
 .floating-icon:hover{
-    background-color: black ; /* Change the background color as needed */
+    background-color: black ; 
     
 }
 
@@ -424,10 +421,16 @@
 
                     <div class="services_container">
                         <div class="services_content">
-                            <img
-                                src="/images/doc1.PNG"
-                                alt=""
-                            />
+                          
+<button class="bt" id="myLink" onclick="Docbutton1()"><img src="/images/doc1.PNG"></button>
+
+                           
+                                <script>
+                                    function Docbutton1() {
+                                         window.location.href = '/userDoctor';
+                                                    }
+                                 </script>
+                        
 
                             <h3 class="services_title">Dr. Prachi Deval</h3>
                             <p class="services_description">
@@ -766,6 +769,7 @@
         <!--- custom js link-->
        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
        <script src="/script/home.js"></script>
+       <script src="script.js"></script>
 
         <!--- ionicon link-->
         <script

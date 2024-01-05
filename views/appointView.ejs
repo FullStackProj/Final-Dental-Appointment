@@ -67,9 +67,8 @@
     </form>
     
     <script>
-        // Add JavaScript to automatically submit the form on select change
         document.getElementById('doctorSelect').addEventListener('change', function() {
-            // Only submit the form if a doctor is selected
+            
             if (this.value !== "") {
                 document.getElementById('doctorFilterForm').submit();
             }

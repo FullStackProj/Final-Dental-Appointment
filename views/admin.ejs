@@ -1,3 +1,4 @@
+<%- include('layout/chatHeader') %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +41,7 @@ text-align: right;
 
 #chat-box {
 width: 80%;
-height: 400px;
+height: 380px;
 border: 1px solid #ddd;
 border-radius: 10px;
 color:rgb(30, 35, 97);
@@ -92,7 +93,7 @@ text-align: left;
   </style>
 </head>
 <body>
-  <h2>ADMIN CHAT</h2>
+  <h2 style="margin-top: 20px;">ADMIN CHAT</h2>
   <div id="chat-box"></div>
 
   <input type="text" id="message-input" placeholder="Type your message">
@@ -105,13 +106,11 @@ text-align: left;
     const messageInput = document.getElementById('message-input');
   
     socket.onmessage = (event) => {
-      // Parse the incoming message as JSON
+    
       const data = JSON.parse(event.data);
       
-      // Check the sender and assign a class accordingly
       const messageClass = data.sender === 'admin' ? 'admin-message' : 'user-message';
   
-      // Append the message with the appropriate class
       chatBox.innerHTML += `<p class="${messageClass}">${data.message}</p>`;
       chatBox.scrollTop = chatBox.scrollHeight;
     };
@@ -120,13 +119,12 @@ text-align: left;
       const messageInput = document.getElementById('message-input');
       const message = messageInput.value;
       if (message.trim() !== '') {
-        // Send a JSON object with sender and message properties
+
         socket.send(JSON.stringify({ sender: 'admin', message }));
         messageInput.value = '';
       }
     }
   
-    // Event listener for the Enter key on the input field
     messageInput.addEventListener('keypress', function (event) {
       if (event.key === 'Enter') {
         event.preventDefault(); 

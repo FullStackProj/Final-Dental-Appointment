@@ -32,7 +32,7 @@ const addEventOnElements = function (elements, eventType, callback) {
     }
 };
 
-/*PRELOADER-preloader will be visible until document load*/
+/*preloader will be visible until document load*/
 
 const preloader = document.querySelector("[data-preloader]");
 

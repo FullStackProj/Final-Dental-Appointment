@@ -95,13 +95,11 @@ button {
   const messageInput = document.getElementById('message-input');
 
   socket.onmessage = (event) => {
-    // Parse the incoming message as JSON
+
     const data = JSON.parse(event.data);
 
-    // Check the sender and assign a class accordingly
     const messageClass = data.sender === 'admin' ? 'admin-message' : 'user-message';
 
-    // Append the message with the appropriate class
     chatBox.innerHTML += `<p class="${messageClass}">${data.message}</p>`;
     chatBox.scrollTop = chatBox.scrollHeight;
   };
@@ -110,16 +108,15 @@ button {
     const messageInput = document.getElementById('message-input');
     const message = messageInput.value;
     if (message.trim() !== '') {
-      // Send a JSON object with sender and message properties
+
       socket.send(JSON.stringify({ sender: 'user', message }));
       messageInput.value = '';
     }
   }
 
-  // Event listener for the Enter key on the input field
   messageInput.addEventListener('keypress', function (event) {
     if (event.key === 'Enter') {
-      event.preventDefault(); // Prevents the default action of the Enter key
+      event.preventDefault(); 
       sendMessage();
     }
   });
