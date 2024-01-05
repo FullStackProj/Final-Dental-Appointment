@@ -9,12 +9,12 @@ router.use(session({
     resave: false,
     saveUninitialized: true,
   }));
-  
+  /*
   router.get('/Userlogin', (req, res) => {
       // Ensure this route is correctly defined
       res.status(200).send('User Login');
     })
-  
+  */
 router.post('/Userlogin', async (req, res) => {
     const { name, email } = req.body;
 
