@@ -34,7 +34,7 @@ router.post("/addPatient", Upload, async (req, res) => {
             type: "success",
             message: "Patient Added Successfully!",
         };
-        res.redirect("/");
+        res.redirect("/Userlogin");
     } catch (err) {
         res.json({ message: err.message, type: "danger" });
     }
