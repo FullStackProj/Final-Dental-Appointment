@@ -23,23 +23,23 @@
 # Requirements : 
 
 - Users can login and sign up
-    - this is a multi user login 
-- staff can 
-   - read and edit the apppointments
-   - can see the details of the patients
-- patient can
-   - make an appointment
+    - This is a multi user login 
+- Staff can 
+   - Read and edit the apppointments
+   - Can see the details of the patients
+- Patient can
+   - Make an appointment
    - see the artices 
    - view about the doctors 
    - view about the services
    - chat with the admin
-- admin can
+- Admin can
    - Add, update, delete and read the services
    - Add, update, delete and read the doctors
    - Add, update, delete and read the articles
    - Add, update, delete and read the staff
    - read the messags of the patients 
-- admin and the staff has dashboards
+- Admin and the staff has dashboards
 
 - Logout 
 
