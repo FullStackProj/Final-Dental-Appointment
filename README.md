@@ -12,10 +12,6 @@
 
 <br>
 
-
-## Deployed Link :
-
-   - link: <a href="https://github.com/FullStackProj/Final-Dental-Appointment">github link</a>
   
 
 <br>
