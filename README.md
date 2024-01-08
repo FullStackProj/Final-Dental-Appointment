@@ -44,7 +44,7 @@ and for 3 usertypes as Doctor, Patient and Staff. This consist with the chat opt
 - HTML
 - CSS
 - EJS
-- javascript
+- JavaScript
 
 ### Backend 
 
