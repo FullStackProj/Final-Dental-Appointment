@@ -1,20 +1,15 @@
-<h1 align="center" style="color:blue"><b>Dental Appointment System</b></h1>
-<br>
+ 
+<h1 align="center" style="color:blue"><b>Dental Appointment Booking System</b></h1>
+
+ ## Project Name : `TOOTHCARE`
+
+---
+ # About Us:
+
+This is a Dental Appointment Booking System which is created as the Full Stack project including 6 CRUD operations, 
+and for 3 usertypes as Doctor, Patient and Staff. This consist with the chat option for users, implemented using websockets.  
 
 
-## Project Name : `TOOTHCARE`
-
-
-
-# About :
-
-<b>This is a Appointment Booking System of a dental clinic with 6 crud operations, and for 3 usertypes as doctor, patient and staff. this consist with chat option for users and implemented with pipelines.   </b>
-
-<br>
-
-  
-
-<br>
 
 # Requirements : 
 
@@ -39,8 +34,8 @@
 
 - Logout 
 
+---
 
-<br>
 
 # Tech stack :
 
@@ -59,11 +54,35 @@
 ### Database
 
 - MongoDB 
+---
+
+# How to run locally
+
+### How to run the server
+
+1. Install Dependencies
+```
+npm install
+```
+Install all the dependencies installed in the package.json file
+
+2. Run the server
+```
+npm start
+```
+
+3. Access the page by going to localhost: 5000
+
+### How to run the Test
+4. Stop the running sever in localhost and run
+```
+npm test
+```
+
+<h3 align="center">Book Your Doctor & Get the Surgery Done!</h3>
+
+---
 
 
 
 
-
-
-
-<br>
