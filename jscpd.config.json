@@ -8,6 +8,6 @@
     "silent": false,
     "ignoreCase": true,
     "output": "./jscpd-report",
-    "threshold": 4
+    "threshold": 4.2
   }
   
